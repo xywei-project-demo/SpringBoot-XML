@@ -1,5 +1,6 @@
 package com.xywei.domain;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -42,7 +43,7 @@ public class Employee {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = (name != null? name.replaceAll(" ", "").replaceAll("\n", ""):null);
 	}
 
 	@Override

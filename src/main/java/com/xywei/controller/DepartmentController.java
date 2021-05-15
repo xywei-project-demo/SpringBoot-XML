@@ -19,9 +19,9 @@ public class DepartmentController {
 
 	@RequestMapping(value = "/department", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
 	@ResponseBody
-	public Department getDepartment(Department department1) {
+	public Department getDepartment(@RequestBody Department department1) {
 		
-		System.out.println("employee=" + department1);
+		System.out.println("department1=" + department1);
 
 		Employee employeeA = new Employee(100, "A");
 		Employee employeeB = new Employee(101, "B");

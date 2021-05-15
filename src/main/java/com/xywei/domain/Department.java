@@ -57,7 +57,7 @@ public class Department {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = (name != null? name.replaceAll(" ", "").replaceAll("\n", ""):null);
 	}
 
 	public List<Employee> getEmployees() {
