@@ -3,6 +3,7 @@ package com.xywei.domain;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
 /**
  * 
@@ -13,9 +14,10 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 @JacksonXmlRootElement(localName = "employee")
 public class Employee {
 
-	@JacksonXmlProperty(localName = "employee_id")
+	@JacksonXmlProperty(localName = "employee_id", isAttribute = true)
 	private Integer id;
 	
+	@JacksonXmlText
 	@JacksonXmlCData
 	private String name;
 	
